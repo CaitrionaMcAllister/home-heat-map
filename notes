@@ -1,0 +1,7 @@
+//make marquee columns extend to bottom of page
+//make data peristent - continuous adding
+//add link to seperate pages
+//incorporate webgl and 3d globe
+//connect data with globe
+
+<marquee style="z-index:2;position:absolute;left: 100px;top:0px;font-family:Bold;font-size:40pt;" direction="down">name example</marquee>

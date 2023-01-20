@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HOME HEAT MAP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif
+        }
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.8;             
+        }
+
+        /* Full height image header */
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("heatMap.png");
+            min-height: 100%;
+        }
+        /* Create two equal columns that floats next to each other */
+         .column {
+         float: left;
+         width: 50%;
+         padding: 10px;
+         height: 800px; /* Should be removed. Only for demonstration */
+        }
+        /* Clear floats after the columns */
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+        
+
+        .w3-bar .w3-button {
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation bar top -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="#home" class="w3-bar-item w3-button w3-wide">HOME HEAT MAP</a>
+
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="https://thecodingtrain.com/CodingChallenges/058-earthquakeviz3d.html" class="w3-bar-item w3-button"></i> GLOBE VIEW</a>
+                <a href="https://html.com/resources/free-html-templates/" class="w3-bar-item w3-button"></i> LIST</a>
+            </div>
+        </div>
+    </div>
+
+    <h2>Two Equal Columns</h2>
+    <div class="row">
+        <!-- column 1 (left) -->
+        <div class="column" style="background-color:#aaa;">
+          <span class="w3-jumbo w3-hide-small">Where do you belong?</span><br>
+          <span class="w3-xxlarge w3-hide-large w3-hide-medium">Where do you belong?</span><br>
+          <span class="w3-large">What do you consider home? Family. Ethnicity. Residency. Friends.</span>
+          <div>
+            <!--name input and button-->
+           <input type="text" name="text" id="inputName" />
+           <button onclick="unshiftNameData();">ADD NAME</button>
+           
+
+           </div>
+
+            <!--home input and button-->
+            <input type="text" name="text" id="inputHome" />
+            <button onclick="unshiftHomeData();">ADD HOME</button>
+            
+        </div>
+
+
+
+
+         <!-- column 2 (right) columnNameList-->
+        <div id="columnNameList" class="column" style="background-color:#bbb;">
+          <h2>I am...
+            <script>
+                // create a names array
+                var namesArr = ["Bob", "Liv", "Cait", "Pearl"];
+                    
+                    //adds input to names array
+                    function unshiftNameData()
+                    {
+                        // get value from the input text
+                        var inputName = document.getElementById('inputName').value;
+                        
+                        // append data to the array
+                        namesArr.unshift(inputName);
+                        
+                        var addedName = "";
+                        
+                        for(i = 0; i < namesArr.length; i++)
+                        {
+                          addedName = addedName + namesArr[i] + "<br/>";
+                        }
+                        
+                        // display array data
+                        document.getElementById('nameText').innerHTML = addedName;
+        
+                        
+                        
+                    }
+        
+                // create a names array
+                var homesArr = ["London", "Flat 2A", "The Beach"];
+                    
+                    //adds input to names array
+                    function unshiftHomeData()
+                    {
+                        // get value from the input text
+                        var inputHome = document.getElementById('inputHome').value;
+                        
+                        // append data to the array
+                        homesArr.unshift(inputHome);
+                        
+                        var addedHome = "";
+                        
+                        for(i = 0; i < homesArr.length; i++)
+                        {
+                            addedHome = addedHome + homesArr[i] + "<br/>";
+                        }
+                        
+                        // display array data
+                        document.getElementById('homeText').innerHTML = addedHome;
+        
+                    }
+            </script>
+            <marquee style="font-family:Bold;font-size:40pt;" behavior="scroll" direction="down" hspace="10">  
+                <p id="nameText"></p>
+              </marquee>
+
+              <marquee style="font-family:Bold;font-size:40pt;" behavior="scroll" direction="down" hspace="10">
+                <p id="homeText"></p> 
+             </marquee>
+             
+          </h2>
+          
+          
+        </div>
+        <div id="columnGlobeView">
+        </div>
+      </div>
+
+    
+
+
+
+
+    <!-- Footer  -->
+    <footer class="w3-center w3-white w3-padding-64">
+        <p class="w3-small">CCI.DIP.DPS Computational Environments - Caitríona McAllister</p>
+    </footer>
+
+</body>
+
+</html>
